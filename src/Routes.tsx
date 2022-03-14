@@ -1,8 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-
 import Home from "./Home";
-import About from "./About";
+import About from "./About/About";
 
 const appRouting = (
   <div className="mf-host">

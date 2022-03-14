@@ -1,4 +1,5 @@
 import React from "react";
+import PLP from 'plphost/PLP';
 
 const App = () => {
     return <div className="host-home">
