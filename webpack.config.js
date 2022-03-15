@@ -36,10 +36,6 @@ const config = {
     new ModuleFederationPlugin(
       {
         name: 'mfhost',
-        filename: 'remoteEntry.js',
-        exposes: {
-          AboutHost: './src/About/About.tsx'
-        },
         remotes: {
           plphost: 'plphost@http://localhost:3001/remoteEntry.js'
         }
