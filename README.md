@@ -17,3 +17,8 @@ npm run build:prod
 npm run build:prod:server
 npm run start
 ```
+
+# Partner app from which modules are used  
+
+https://github.com/dev-2point0/demo-mf-plp
+
