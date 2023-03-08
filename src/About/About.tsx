@@ -1,17 +1,24 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import ErrorBoundary from '../shared/ErrorBoundary';
 const PLPComp = React.lazy(() => import("plphost/PLP"));
 
 const About = () => {
+    const [textList, setTextList] = useState([]);
+    useEffect(() => {
+        fetch('https://baconipsum.com/api/?type=all')
+        .then(x => x.json())
+        .then(y => {
+            setTextList(y)
+        });
+    }, [])
     return (<div className="host-about">
         <p className="heading-text">About Page Data</p>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s with the release of
-            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-            like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <h2>Sample api data host api call</h2>
+        {
+         textList.map((item: string, index: number) => <p key={index}>{item}</p>)  
+        }
+        <h2>Sample api data host microfrontend call</h2>
+        <p></p>
             <Suspense fallback={<div>Loading PLP ...</div>}>
                 <ErrorBoundary>
                     <PLPComp />
