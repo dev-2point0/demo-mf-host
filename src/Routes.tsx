@@ -9,12 +9,12 @@ const appRouting = (
     <Router>
       <nav>
         <Link to="/" >Home</Link>
-        <Link to="/about" >About US</Link>
+        <Link to="/about/param1" >About US</Link>
       </nav>
       <div className="page-body">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about/:testparam" element={<About />} />
         </Routes>
       </div>
     </Router>
